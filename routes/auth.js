@@ -45,7 +45,7 @@ router.post(
         return resp.send({ errors: result.array() });
       }
     } catch (error) {
-      resp.json(error);
+      resp.status(500).json(error);
     }
   }
 );
@@ -84,7 +84,7 @@ router.post(
       }
       try {
       } catch (error) {
-        resp.json(error);
+        resp.status(500).json(error);
       }
     } else {
       return resp.send({ errors: result.array() });
@@ -99,7 +99,7 @@ router.post("/get-user-data", fetchUser, async (req, resp) => {
     const user = await User.findById(userId).select("-password");
     resp.send(user);
   } catch (error) {
-    resp.json(error);
+    resp.status(500).json(error);
   }
 });
 module.exports = router;
