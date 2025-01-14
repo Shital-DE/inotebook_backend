@@ -4,7 +4,7 @@ const { body, validationResult } = require("express-validator");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const fetchUser = require("../moddleware/fetch_user");
+const fetchUser = require("../middleware/fetch_user");
 
 const JWT_SECRET = "Datta@123";
 
